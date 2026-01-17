@@ -21,44 +21,33 @@ hub.imu.reset_heading(0)
 # without artifact 
 async def main():
    if hub.imu.ready():
-    # go straight and turn toward cave
-    await robot.straight(980) #robot straight
-    robot.settings(straight_speed = 220,straight_acceleration= 100, turn_rate=200, turn_acceleration=100) #robot slower
+    await robot.straight(-980) #robot straight
+    # robot.settings(straight_speed = 220,straight_acceleration= 100, turn_rate=200, turn_acceleration=100) #robot slower
     await robot.straight(25)
     await robot.turn(-90)
+    await RAM.run_time(690,1700)#arm goes down (RAM)
 
-    # reset  arms 
-    await RAM.run_until_stalled(speed = -180, duty_limit=25)#arm goes down (RAM)
-    RAM.reset_angle(0)
-    await LAM.run_until_stalled(speed = -180, duty_limit=25)#arm goes down (RAM)
-    LAM.reset_angle(0)
-    
-    print(f"1 arm angle L& R : {LAM.angle()} {RAM.angle()}")
-
-    # lower arms
-    await RAM.run_time(400,400)#arm goes down (RAM)
-    await LAM.run_target(400,592) # arm go down (RAM)
-
-    print(f"2 arm angle L& R : {LAM.angle()} {RAM.angle()}")
-
-    wait(300)
-
-    # go in cave : 
+   
+    print("flipper dn")
+    print(f"step 1 : right arm angle : {RAM.angle()}")
+  
+    robot.settings(straight_speed = 220,straight_acceleration= 300, turn_rate=200, turn_acceleration=100)
     await robot.straight(95)
+    await robot.turn(-8)
+    wait(100)
 
-
-    # raise left arm(fork) a little 
-    await LAM.run_target(-100, 550)
-    # raise right arm up and dn
-    await RAM.run_target(-100, 100)  
-    await RAM.run_target(400, 400)
-    print(f"3 right arm angle : {RAM.angle()}")
-
-# backout of cave
-    await robot.straight(-120)
-    LAM.run_target(-400,20) # fork up 
  
-    # go to statue
+    await RAM.run_time(-690,970)  # arm go up (LAM)
+    print("flipper up")
+    print(f"step 3 : right arm angle : {RAM.angle()}")
+
+    await RAM.run_time(690,830) #arm goes dn (RAM)
+    print("flipper down")
+    print(f"step 4 : right arm angle : {RAM.angle()}")  
+ 
+    await wait(230)
+    await robot.straight(-120)
+    
     robot.settings(straight_speed = 720,straight_acceleration= 490, turn_rate=600, turn_acceleration=400)
 
     await robot.turn(40) 

@@ -20,31 +20,28 @@ robot.settings(straight_speed = 720,straight_acceleration= 300, turn_rate=600, t
 hub.imu.reset_heading(0)
 
 if hub.imu.ready():
+    # get brush
     robot.straight(650)
     robot.straight(-200)
     robot.straight(63)
+    # lower fork
     LAM.run_time(-5000,1200)
     LAM.run_time(5000,1000)
+    # go to soils
     robot.straight(218)
     robot.settings(straight_speed = 720,straight_acceleration= 300, turn_rate=450, turn_acceleration=200)
+    # get the hooked soil
     robot.turn(-45)
     robot.settings(straight_speed = 720,straight_acceleration= 300, turn_rate=600, turn_acceleration=400)
+    # hook up
     RAM.run_time(-6000,900)
+
+    #push soils 
     robot.straight(280)
+    
+    #back out 
     robot.straight(-90)
+    
+    #turn to return 
     robot.turn(55)
     robot.straight(-1000)
-    # robot.straight(-20)
-    # robot.turn(-22) # push the red rod
-    # robot.settings(straight_speed = 720,straight_acceleration= 600, turn_rate=600, turn_acceleration=400)
-    # robot.turn(100)
-    # robot.straight(-1000)
-   
-
-    # robot.straight(650)
-
-
-    # robot.straight(-20)
-    # robot.straight(-200)
-    # robot.turn(100)
-    # robot.straight(-800)

@@ -24,20 +24,29 @@ async def main():
       hub.display.number(1)
       await robot.turn(88)
       await robot.straight(395)
-
-      # pull sand
       await RAM.run_time(1500,1100)
       await robot.straight(-120)
       await RAM.run_time(-1500,1100)
-      # push ship
       await robot.straight(275)
-
-      # turn to get to blue side
       await robot.turn(-50)
       await robot.straight(200)
       await robot.turn(50)
       await robot.straight(1300)
-      
+      # robot.settings(straight_speed = 900,straight_acceleration= 700, turn_rate=600, turn_acceleration=400)
+      # await robot.straight(-60)
+ 
+      # for i in range(4):
+      #    await robot.straight(88)
+      #    await robot.straight(-88)
+      # robot.settings(straight_speed = 900,straight_acceleration= 700, turn_rate=600, turn_acceleration=400)
+      # await robot.straight(-180)
+      # await robot.turn(-50)
+      # await robot.straight(140)
+      # await robot.turn(43)
+      # await robot.straight(220)
+      # await robot.turn(26)
+      # await robot.straight(1000)
+ 
  
  
 run_task(main())

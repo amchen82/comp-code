@@ -25,17 +25,20 @@ if hub.imu.ready():
     robot.straight(63)
     LAM.run_time(-5000,1200)
     LAM.run_time(5000,1000)
-    robot.straight(150)
-
+    robot.straight(218)
     robot.settings(straight_speed = 720,straight_acceleration= 300, turn_rate=450, turn_acceleration=200)
-    robot.turn(-75)
+    robot.turn(-45)
     robot.settings(straight_speed = 720,straight_acceleration= 300, turn_rate=600, turn_acceleration=400)
     RAM.run_time(-6000,900)
     robot.straight(280)
+    robot.straight(-90)
+    robot.turn(55)
+    robot.straight(-1000)
+    # robot.straight(-20)
     # robot.turn(-22) # push the red rod
     # robot.settings(straight_speed = 720,straight_acceleration= 600, turn_rate=600, turn_acceleration=400)
     # robot.turn(100)
-    # robot.straight(-618)
+    # robot.straight(-1000)
    
 
     # robot.straight(650)
