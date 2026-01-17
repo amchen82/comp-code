@@ -24,20 +24,22 @@ async def main():
     # go straight and turn toward cave
     await robot.straight(980) #robot straight
     robot.settings(straight_speed = 220,straight_acceleration= 100, turn_rate=200, turn_acceleration=100) #robot slower
-    await robot.straight(25)
-    await robot.turn(-90)
+    await robot.straight(-100)
+    await robot.turn(90)
 
     # reset  arms 
-    await RAM.run_until_stalled(speed = -180, duty_limit=25)#arm goes down (RAM)
+    await RAM.run_until_stalled(speed = -180, duty_limit=35)#arm goes down (RAM)
     RAM.reset_angle(0)
-    await LAM.run_until_stalled(speed = -180, duty_limit=25)#arm goes down (RAM)
+
+    await wait(300)
+    await LAM.run_until_stalled(speed = 180, duty_limit=25)#arm goes down (LAM)
     LAM.reset_angle(0)
     
     print(f"1 arm angle L& R : {LAM.angle()} {RAM.angle()}")
 
     # lower arms
-    await RAM.run_time(400,400)#arm goes down (RAM)
-    await LAM.run_target(400,592) # arm go down (RAM)
+    await RAM.run_target(400,700)#arm goes down (RAM)
+    await LAM.run_target(400,-700) # arm go down (RAM)
 
     print(f"2 arm angle L& R : {LAM.angle()} {RAM.angle()}")
 
@@ -48,7 +50,7 @@ async def main():
 
 
     # raise left arm(fork) a little 
-    await LAM.run_target(-100, 550)
+    await LAM.run_target(-100, -600)
     # raise right arm up and dn
     await RAM.run_target(-100, 100)  
     await RAM.run_target(400, 400)
