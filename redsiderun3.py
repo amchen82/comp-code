@@ -16,28 +16,27 @@ robot = DriveBase(left_motor,right_motor,wheel_diameter,axle_track)
  
 robot.use_gyro(True)
  
-robot.settings(straight_speed = 900,straight_acceleration= 800, turn_rate=600, turn_acceleration=400)
+robot.settings(straight_speed = 600,straight_acceleration= 800, turn_rate=600, turn_acceleration=400)
 hub.imu.reset_heading(0)
  
 async def main():
    if hub.imu.ready():
       hub.display.number(1)
-      await robot.turn(88)
-      await robot.straight(395)
-
-      # pull sand
-      await RAM.run_time(1500,1100)
-      await robot.straight(-120)
-      await RAM.run_time(-1500,1100)
-      # push ship
-      await robot.straight(275)
-
-      # turn to get to blue side
-      await robot.turn(-50)
+      await robot.straight(580)
+      await LAM.run_time(400,1000)
+      await robot.straight(-125)
+      await robot.turn(-60)
+      await robot.straight(100)
+      await robot.turn(100)
       await robot.straight(200)
-      await robot.turn(50)
+      await robot.turn(-30)
+      await RAM.run_time(700,700)
+      await robot.straight(-150)
+      await robot.turn(-30)
+      await robot.straight(150)
+      await robot.turn(30)
       await robot.straight(1300)
-      
  
+
  
 run_task(main())
