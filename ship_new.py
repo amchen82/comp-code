@@ -31,6 +31,7 @@ async def main():
 
     #arm goes down 
     await RAM.run_target(200,400)
+    print(f"RAM angle: {RAM.angle()}")
 
     for i in range(10):
       await robot.straight(-10)

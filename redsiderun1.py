@@ -21,9 +21,10 @@ hub.imu.reset_heading(0)
 
 if hub.imu.ready():
     # get brush
-    robot.straight(650)
-    robot.straight(-200)
-    robot.straight(63)
+    # robot.straight(650)
+    # robot.straight(-200)
+    # robot.straight(63)
+    robot.straight(613)
     # lower fork
     LAM.run_time(-5000,1200)
     LAM.run_time(5000,1000)
