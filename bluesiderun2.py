@@ -18,7 +18,7 @@ robot.use_gyro(True)
 
 robot.settings(straight_speed = 720,straight_acceleration= 300, turn_rate=600, turn_acceleration=400)
 hub.imu.reset_heading(0)
-
+#mission : ring and table
 
 if hub.imu.ready():
     robot.straight(75)
