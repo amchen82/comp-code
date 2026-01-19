@@ -22,20 +22,20 @@ hub.imu.reset_heading(0)
 async def main():
    if hub.imu.ready():
     # go straight and turn toward cave
-    # await robot.straight(90)
+    await robot.straight(-20)
+    await robot.turn(-30)
+    # await robot.straight(-300)
     # await robot.turn(20)
-    # await robot.straight(300)
-    # await robot.turn(-20)
-    # await robot.straight(610) #robot straight
-    # robot.settings(straight_speed = 220,straight_acceleration= 100, turn_rate=200, turn_acceleration=100) #robot slower
-   
+    await robot.straight(-900) #robot straight
+    robot.settings(straight_speed = 220,straight_acceleration= 100, turn_rate=200, turn_acceleration=100) #robot slower
     # await robot.straight(-100)
-    # await robot.turn(90)
+    # await robot.straight(100)
+    await robot.turn(-90)
 
 
-    # reset  arms 
-    await RAM.run_until_stalled(speed =180, duty_limit=35)#arm goes down (RAM)
-    RAM.reset_angle(0)
+    # # reset  arms 
+    # await RAM.run_until_stalled(speed =-180, duty_limit=35)#arm goes down (RAM)
+    # RAM.reset_angle(0)
 
     # await wait(300)
     # await LAM.run_until_stalled(speed = -180, duty_limit=25)#arm goes down (LAM)
@@ -43,31 +43,22 @@ async def main():
     
     print(f"1 arm angle L& R : {LAM.angle()} {RAM.angle()}")
 
-    # lower arms
-    # await RAM.run_target(400,200)#arm goes down (RAM)
-    # await LAM.run_target(400,780) # arm go down (RAM)
-    await LAM.run_until_stalled(speed = 180, duty_limit=25)#arm goes down (LAM)
-    LAM.reset_angle(0)
+    # # lower arms
+    # await RAM.run_target(400,380)#arm goes down (RAM)
+    # await LAM.run_target(400,490) # arm go down (RAM)
+
     print(f"2 arm angle L& R : {LAM.angle()} {RAM.angle()}")
 
     wait(300)
 
 #     # go in cave : 
-    robot.settings(straight_speed = 100,straight_acceleration= 40, turn_rate=200, turn_acceleration=100) #robot slower
-    await robot.straight(110)
+    robot.settings(straight_speed = 200,straight_acceleration= 100, turn_rate=200, turn_acceleration=100) #robot slower
+    await robot.straight(60)
 
     # await LAM.run_target(200,500) # arm go down (RAM)
-    # await robot.straight(60)
-    # await LAM.run_target(200,400) # arm go up (RAM)
-    await LAM.run_time(-690,370)  # arm go up (LAM)
-    
-    await RAM.run_time(-690,830) # arm down (RAM)
-    await RAM.run_time(690,600)   # right arm down a bit
-    print(f"2 arm angle L& R : {LAM.angle()} {RAM.angle()}")
-    # await RAM.run_target(-200, 600)  # right arm up a bit
-    print(f"2 arm angle L& R : {LAM.angle()} {RAM.angle()}")
-    # await RAM.run_target(400, 100)   # right arm down a bit
-    await robot.straight(-115)
+    await robot.straight(60)
+    await LAM.run_target(200,515) # arm go up (RAM)
+    await robot.straight(-40)
 #     # raise left arm(fork) a little 
 #     await LAM.run_target(-100, -600)
 #     # raise right arm up and dn
