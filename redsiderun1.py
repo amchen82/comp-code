@@ -32,13 +32,13 @@ if hub.imu.ready():
     # Mission 2
   
     robot.settings(straight_speed = 720,straight_acceleration= 300, turn_rate=450, turn_acceleration=200)
-    robot.turn(-45)
+    robot.turn(-44)
     robot.settings(straight_speed = 720,straight_acceleration= 300, turn_rate=600, turn_acceleration=400)
     ## Grab one of the top soil missons
-    robot.straight(120)
+    robot.straight(153)
     RAM.run_time(-6000,900)
-    robot.straight(-130)
-    robot.turn(67)
+    robot.straight(-170)
+    robot.turn(73)
     robot.straight(-800)
 #     robot.straight(-90)
 #     robot.turn(55)
