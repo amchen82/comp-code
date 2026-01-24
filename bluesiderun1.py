@@ -5,7 +5,7 @@ from pybricks.robotics import DriveBase
 from pybricks.parameters import Port,Direction
 
 hub = PrimeHub()
-left_motor = Motor(Port.A,Direction.COUNTERCLOCKWISE)
+left_motor = Motor(Port.A,Direction.COUNTERC-LOCKWISE)
 right_motor = Motor(Port.E,Direction.CLOCKWISE)
 RAM = Motor(Port.C) # lift artifact 
 LAM = Motor(Port.B) # not used 

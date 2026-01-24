@@ -37,8 +37,9 @@ if hub.imu.ready():
     ## Grab one of the top soil missons
     robot.straight(153)
     RAM.run_time(-6000,900)
-    robot.straight(-170)
-    robot.turn(73)
+    robot.straight(-200)
+    robot.turn(70)
+    robot.settings(straight_speed = 950,straight_acceleration= 600, turn_rate=600, turn_acceleration=400)
     robot.straight(-800)
 #     robot.straight(-90)
 #     robot.turn(55)

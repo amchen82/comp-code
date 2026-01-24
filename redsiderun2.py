@@ -51,7 +51,7 @@ async def main():
     wait(300)
 
 #     # go in cave : 
-    robot.settings(straight_speed = 100,straight_acceleration= 40, turn_rate=200, turn_acceleration=100) #robot slower
+    # robot.settings(straight_speed = 100,straight_acceleration= 40, turn_rate=200, turn_acceleration=100) #robot slower
     await robot.straight(110)
 
     # await LAM.run_target(200,500) # arm go down (RAM)
@@ -83,7 +83,7 @@ async def main():
 
     await robot.turn(40) 
     await robot.straight(328)
-    await RAM.run_target(-710,-2) # flipper up
+    await RAM.run_time(-690,980) # flipper up
 
     robot.settings(straight_speed = 720,straight_acceleration= 600, turn_rate=600, turn_acceleration=400)
     await robot.straight(-230)
