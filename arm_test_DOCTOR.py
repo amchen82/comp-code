@@ -16,11 +16,17 @@ robot = DriveBase(left_motor,right_motor,wheel_diameter,axle_track)
 
 robot.use_gyro(True)
 
-robot.settings(straight_speed = 720,straight_acceleration= 300, turn_rate=600, turn_acceleration=400)
+robot.settings(straight_speed = 820,straight_acceleration= 300, turn_rate=600, turn_acceleration=400)
 hub.imu.reset_heading(0)
 # mission : rocks
 
 if hub.imu.ready():
-    RAM.run_time(-1000,3000)
-    LAM.run_time(1000,12                                                                                                                                                                                                                          m             00) 
+    robot.straight(634)
+   # robot.settings(straight_speed = 820,straight_acceleration= 600, turn_rate=600, turn_acceleration=400)
+   # robot.straight(200)
+    robot.straight(-40)
+    LAM.run_time(-700,3000)
+    RAM.run_time(-700,3700)
+    LAM.run_time(1000,1200)
+    robot.straight(-700)
    
