@@ -28,37 +28,23 @@ if hub.imu.ready():
     # ## Brush Pickup
     # LAM.run_time(-5000,1200)
     # LAM.run_time(5000,1000)
-    robot.straight(687)
+    robot.straight(680)
     # Mission 2
   
     robot.settings(straight_speed = 720,straight_acceleration= 300, turn_rate=450, turn_acceleration=200)
-    robot.turn(-44)
-    robot.settings(straight_speed = 720,straight_acceleration= 300, turn_rate=600, turn_acceleration=400)
+    robot.turn(-45)
+    robot.settings(straight_speed = 900,straight_acceleration= 600, turn_rate=600, turn_acceleration=400)
     ## Grab one of the top soil missons
     robot.straight(153)
+    robot.settings(straight_speed = 720,straight_acceleration= 300, turn_rate=450, turn_acceleration=200)
     RAM.run_time(-6000,900)
-    robot.straight(-200)
-    robot.turn(70)
+    robot.straight(-135)
+    robot.turn(40)
     robot.settings(straight_speed = 950,straight_acceleration= 600, turn_rate=600, turn_acceleration=400)
+    robot.straight(-101)
+    wait(1000)
+    robot.turn(20)
+    robot.straight(-20)
+    LAM.run_time(-5000,1200)
+    LAM.run_time(+5000,1000)
     robot.straight(-800)
-#     robot.straight(-90)
-#     robot.turn(55)
-
-#     # Back to start
-#     robot.straight(-1000)
-
-
-#     # robot.straight(-20)
-#     # robot.turn(-22) # push the red rod
-#     # robot.settings(straight_speed = 720,straight_acceleration= 600, turn_rate=600, turn_acceleration=400)
-#     # robot.turn(100)
-#     # robot.straight(-1000)
-   
-#   # robot.straight(218)
-#     # robot.straight(650)
-
-
-#     # robot.straight(-20)
-#     # robot.straight(-200)
-#     # robot.turn(100)
-#     # robot.straight(-800)
