@@ -22,19 +22,21 @@ hub.imu.reset_heading(0)
 if hub.imu.ready():
     robot.straight(534)
     # # # silo
-    LAM.run_time(500,500)
+    LAM.run_time(1000,500)
     LAM.run_time(-500,500)
+
     LAM.run_time(1000,600)
     LAM.run_time(-500,600)
-    LAM.run_time(600,600)
+
+    LAM.run_time(1000,600)
     LAM.run_time(-500,600)
-    LAM.run_time(9000,1000)
+    LAM.run_time(2000,1000)
     # #travel to next location
     robot.straight(231)
 
     robot.turn(-31)
     robot.straight(-9)
-    robot.turn(81)
+    robot.turn(78)
     robot.straight(15)
     
     RAM.run_time(-600,1000)
@@ -43,6 +45,8 @@ if hub.imu.ready():
     RAM.run_time(700,1000)
     robot.settings(straight_speed = 720,straight_acceleration= 300, turn_rate=600, turn_acceleration=400)
     robot.straight(-120)
-    robot.turn(-132)
-    robot.straight(-400)
-    
+    robot.turn(-128)
+    robot.straight(-440) # drive less
+    robot.straight(400)
+    robot.turn(60)
+    robot.straight(-900)
