@@ -47,7 +47,7 @@ async def main():
 
     await LAM.run_time(-690,470)  # fork go up inside cave (LAM)
     
-    await RAM.run_time(-690,980) # arm up (RAM)
+    await RAM.run_time(-690,1100) # arm up (RAM)
     await RAM.run_time(690,900)   # right arm down 
     print(f"2 arm angle L& R : {LAM.angle()} {RAM.angle()}")
     
