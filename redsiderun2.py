@@ -27,7 +27,8 @@ async def main():
     await robot.straight(300)
     await robot.turn(-20)
     await robot.straight(610) #robot straight
-    # robot.settings(straight_speed = 220,straight_acceleration= 100, turn_rate=200, turn_acceleration=100) #robot slower
+    robot.settings(straight_speed = 220,straight_acceleration= 100, turn_rate=200, turn_acceleration=100) 
+    #robot slower
    
     await robot.straight(-100)
     await robot.turn(90)
