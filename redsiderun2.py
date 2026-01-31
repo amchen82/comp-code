@@ -27,6 +27,7 @@ async def main():
     await robot.straight(300)
     await robot.turn(-20)
     await robot.straight(610) #robot straight
+    
     robot.settings(straight_speed = 220,straight_acceleration= 100, turn_rate=200, turn_acceleration=100) 
     #robot slower
    
@@ -39,6 +40,7 @@ async def main():
      LAM.run_until_stalled(speed = 180, duty_limit=35)#arm goes down (LAM)
    )
     print(f"1 arm angle L& R : {LAM.angle()} {RAM.angle()}")
+    robot.settings(straight_speed = 220,straight_acceleration= 100, turn_rate=200, turn_acceleration=100) 
 
     wait(300)
 
@@ -49,7 +51,7 @@ async def main():
     await LAM.run_time(-690,470)  # fork go up inside cave (LAM)
     
     await RAM.run_time(-690,1100) # arm up (RAM)
-    await RAM.run_time(690,900)   # right arm down 
+    await RAM.run_time(690,990)   # right arm down 
     print(f"2 arm angle L& R : {LAM.angle()} {RAM.angle()}")
     
     await robot.straight(-125)
