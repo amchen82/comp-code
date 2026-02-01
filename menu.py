@@ -14,7 +14,7 @@ if selected == "4":
 elif selected == "5":
     import redsiderun2
 elif selected == "6":
-    import redsiderun3
+    import redsiderun1
 elif selected == "2":
     import bluesiderun2
 elif selected == "1":

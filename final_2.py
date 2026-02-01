@@ -21,4 +21,5 @@ hub.imu.reset_heading(0)
 
 if hub.imu.ready():
     robot.straight(450)
+    robot.straight(-450)
    

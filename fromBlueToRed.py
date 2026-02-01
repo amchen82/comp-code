@@ -16,7 +16,8 @@ robot = DriveBase(left_motor,right_motor,wheel_diameter,axle_track)
 
 robot.use_gyro(True)
 
-robot.settings(straight_speed = 1200,straight_acceleration= 800, turn_rate=600, turn_acceleration=400)
+robot.settings(straight_speed = 720,straight_acceleration= 490, turn_rate=600, turn_acceleration=400)
+
 hub.imu.reset_heading(0)
 
 if hub.imu.ready():
