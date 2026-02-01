@@ -10,13 +10,13 @@ hub.system.set_stop_button(Button.CENTER)
 hub.light.on(Color.BLUE)
 
 if selected == "4":
-    import arm_test_DOCTOR
+    import redsiderun3
 elif selected == "5":
     import redsiderun2
 elif selected == "6":
     import redsiderun1
 elif selected == "2":
-    import bluesiderun2
+    import CarRoTa
 elif selected == "1":
     import bluesiderun1
 elif selected == "3":
