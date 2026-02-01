@@ -15,10 +15,10 @@ elif selected == "5":
     import redsiderun2
 elif selected == "6":
     import redsiderun1
-elif selected == "2":
-    import CarRoTa
 elif selected == "1":
-    import bluesiderun1
+    import CarRoTa
+elif selected == "2":
+    import bluesiderun2
 elif selected == "3":
     import fromBlueToRed
 elif selected == "7":
