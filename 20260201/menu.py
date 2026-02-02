@@ -10,15 +10,15 @@ hub.system.set_stop_button(Button.CENTER)
 hub.light.on(Color.BLUE)
 
 if selected == "4":
-    import mission11and12
+    import redmission11and12
 elif selected == "5":
-    import mission3and4
+    import redmission3and4
 elif selected == "6":
-    import mission1and2
+    import redmission1and2
 elif selected == "1":
-    import mission5678
+    import bluemission5678
 elif selected == "2":
-    import mission9and10
+    import bluemission9and10
 elif selected == "3":
     import fromBlueToRed
 elif selected == "7":
