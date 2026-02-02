@@ -28,7 +28,7 @@ if hub.imu.ready():
     # ## Brush Pickup
     # LAM.run_time(-5000,1200)
     # LAM.run_time(5000,1000)
-    robot.straight(680)
+    robot.straight(680) # faster???
     # Mission 2
   
     robot.settings(straight_speed = 720,straight_acceleration= 300, turn_rate=450, turn_acceleration=200)
