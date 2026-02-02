@@ -22,7 +22,7 @@ hub.imu.reset_heading(0)
 if hub.imu.ready():
     robot.straight(534)
     # # # silo
-    LAM.run_time(1000,400)
+    LAM.run_time(1000,400)#up
     LAM.run_time(-500,600)
     print(hub.imu.heading())
     LAM.run_time(1000,600)
@@ -42,11 +42,11 @@ if hub.imu.ready():
     print(hub.imu.heading())
     robot.turn(-8)
     robot.straight(15)
-    
-    RAM.run_time(-600,1000)
+    # turn back  robot.turn(6)
+    RAM.run_time(-600,1000)# arm down 
     robot.settings(straight_speed = 350,straight_acceleration= 80, turn_rate=600, turn_acceleration=400)
-    robot.straight(55)
-    RAM.run_time(700,1000)
+    robot.straight(55) 
+    RAM.run_time(700,1000)# arm up
     robot.settings(straight_speed = 720,straight_acceleration= 300, turn_rate=600, turn_acceleration=400)
     robot.straight(-120)
     robot.turn(-124.67)

@@ -27,13 +27,13 @@ if hub.imu.ready():
     LAM.run_time(800,590) #LAM - inside the ring
     LAM.run_time(-200,400) #LAM - secures the ring
     RAM.run_time(2200,1000) #RAM goes down
-    wait(700)
-    LAM.run_time(-100,1800) #pulls back the ring
+    wait(700)  # ????? 
+    LAM.run_time(-100,1800) #pulls back the ring # ??? faster 
     robot.straight(-160)
-    wait(550)
+    wait(550) #?????
     robot.straight(20)
     RAM.run_time(-800,150) #arm goes up slighty 
-    wait(550)
+    wait(550) #????
     robot.straight(20)
     RAM.run_time(-600,1000) #RAM goes up all the way
     robot.settings(straight_speed = 900,straight_acceleration= 900, turn_rate=600, turn_acceleration=400)
