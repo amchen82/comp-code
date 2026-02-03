@@ -9,11 +9,11 @@ hub.system.set_stop_button(Button.CENTER)
 
 hub.light.on(Color.BLUE)
 
-if selected == "4":
+if selected == "6":
     import redmission11and12
 elif selected == "5":
     import redmission3and4
-elif selected == "6":
+elif selected == "4":
     import redmission1and2
 elif selected == "1":
     import bluemission5678

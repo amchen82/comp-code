@@ -42,8 +42,9 @@ if hub.imu.ready():
     print(hub.imu.heading())
     robot.turn(-8)
     robot.straight(15)
-    # turn back  robot.turn(6)
-    RAM.run_time(-600,1000)# arm down 
+    robot.turn(6)
+    # turn back  
+    RAM.run_time(-680,1080)# arm down 
     robot.settings(straight_speed = 350,straight_acceleration= 80, turn_rate=600, turn_acceleration=400)
     robot.straight(55) 
     RAM.run_time(700,1000)# arm up
@@ -51,7 +52,7 @@ if hub.imu.ready():
     robot.straight(-120)
     robot.turn(-124.67)
     robot.settings(straight_speed = 900,straight_acceleration= 900, turn_rate=900, turn_acceleration=900)
-    robot.straight(-350) # drive less
-    robot.straight(400)
+    robot.straight(-300) # drive less
+    robot.straight(320)
     robot.turn(60)
     robot.straight(-900)
