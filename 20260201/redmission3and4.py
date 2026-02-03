@@ -23,22 +23,25 @@ async def main():
    if hub.imu.ready():
     # go straight and turn toward cave
     await robot.straight(90)
-    await robot.turn(20)
-    await robot.straight(300)
-    await robot.turn(-20)
-    await robot.straight(610) #robot straight
+    # await robot.turn(20)
+    # await robot.straight(300)
+    # await robot.turn(-20)
+    # await robot.straight(610) #robot straight
+    await multitask(robot.turn(20), robot.straight(300))
+    await multitask(robot.turn(-20), robot.straight(610))
     
     robot.settings(straight_speed = 220,straight_acceleration= 100, turn_rate=200, turn_acceleration=100) 
     #robot slower
    
-    await robot.straight(-90)
-    await robot.turn(90)
+    # await robot.straight(-90)
+    # await robot.turn(90)
+    await multitask( robot.straight(-90), robot.turn(90))
     # backup a bit
-    robot.settings(straight_speed = 220,straight_acceleration= 100, turn_rate=200, turn_acceleration=100) 
+    robot.settings(straight_speed = 400,straight_acceleration= 100, turn_rate=200, turn_acceleration=100) 
     await robot.straight(-25)
     # lower arms
-    await multitask(  RAM.run_until_stalled(speed =360, duty_limit=35), #arm goes down (RAM)
-     LAM.run_until_stalled(speed = 360, duty_limit=35)#arm goes down (LAM)
+    await multitask(  RAM.run_until_stalled(speed =500, duty_limit=35), #arm goes down (RAM)
+     LAM.run_until_stalled(speed = 500, duty_limit=35)#arm goes down (LAM)
    )
     print(f"1 arm angle L& R : {LAM.angle()} {RAM.angle()}")
    
@@ -46,34 +49,36 @@ async def main():
 
 #     # go in cave : 
    
-    
-    await robot.straight(135)
+    await robot.straight(131)
 
-    await LAM.run_time(-690,470)  # fork go up inside cave (LAM)
+    # await LAM.run_time(-690,470)  # fork go up inside cave (LAM)
     
-    await RAM.run_time(-690,1100) # arm up (RAM)
+    # await RAM.run_time(-690,1100) # arm up (RAM)
+    await multitask( RAM.run_time(-690,1100), LAM.run_time(-690,470))
+
     await RAM.run_time(690,990)   # right arm down 
     print(f"2 arm angle L& R : {LAM.angle()} {RAM.angle()}")
-    
+  # # backout of cave  
     await robot.straight(-125)
     await LAM.run_time(-690,800) # fork up
 
 
-# # backout of cave
 
- 
+
+
      # go to statue
     robot.settings(straight_speed = 900,straight_acceleration= 900, turn_rate=600, turn_acceleration=400)
 
-    await robot.turn(40) 
-    await robot.straight(328)
+        # await robot.turn(40) 
+        # await robot.straight(328)
+    await multitask( robot.turn(40), robot.straight(328))
     await RAM.run_time(-690,980) # flipper up
 
     # robot.settings(straight_speed = 900,straight_acceleration= 900, turn_rate=600, turn_acceleration=400)
     await robot.straight(-230)
-    await robot.turn(70)
-
-    await robot.straight(800)
+    # await robot.turn(70)
+    # await robot.straight(800)
+    await multitask( robot.turn(70), robot.straight(800))   
     
 
 
