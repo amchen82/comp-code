@@ -20,6 +20,6 @@ robot.settings(straight_speed = 720,straight_acceleration= 300, turn_rate=600, t
 hub.imu.reset_heading(0)
 
 if hub.imu.ready():
-    robot.straight(450)
-    robot.straight(-450)
+    robot.straight(400)
+    robot.straight(-400)
    

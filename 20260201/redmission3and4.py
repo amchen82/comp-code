@@ -23,14 +23,14 @@ async def main():
    if hub.imu.ready():
     # go straight and turn toward cave
     await robot.straight(90)
-    # await robot.turn(20)
-    # await robot.straight(300)
-    # await robot.turn(-20)
-    # await robot.straight(610) #robot straight
-    await multitask(robot.turn(20), robot.straight(300))
-    await multitask(robot.turn(-20), robot.straight(610))
+    await robot.turn(20)
+    await robot.straight(300)
+    await robot.turn(-20)
+    await robot.straight(610) #robot straight
+    # await multitask(robot.turn(20), robot.straight(300))
+    # await multitask(robot.turn(-20), robot.straight(610))
     
-    robot.settings(straight_speed = 400,straight_acceleration= 100, turn_rate=200, turn_acceleration=100) 
+    robot.settings(straight_speed = 400,straight_acceleration= 150, turn_rate=200, turn_acceleration=100) 
     #robot slower
    
     await robot.straight(-90)
