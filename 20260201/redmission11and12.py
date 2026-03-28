@@ -75,7 +75,7 @@ if hub.imu.ready():
    # robot.straight(200)
     robot.straight(-33)
     LAM.run_time(-700,1300)
-    robot.straight(10)
+    robot.straight(5.1)
     RAM.run_time(-1200,3000)
     LAM.run_time(1500,1400)
     robot.straight(-100)
