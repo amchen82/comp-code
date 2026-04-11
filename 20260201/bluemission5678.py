@@ -41,7 +41,7 @@ if hub.imu.ready():
     robot.turn(78)
     print(hub.imu.heading())
     robot.turn(-8)
-    robot.straight(15)
+    robot.straight(10)
     robot.turn(6)
     # turn back  
     RAM.run_time(-680,1080)# arm down 

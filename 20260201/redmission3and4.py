@@ -33,7 +33,7 @@ async def main():
     robot.settings(straight_speed = 400,straight_acceleration= 150, turn_rate=200, turn_acceleration=100) 
     #robot slower
    
-    await robot.straight(-90)
+    await robot.straight(-92.3)
     await robot.turn(90)
  
     # backup a bit
@@ -66,12 +66,12 @@ async def main():
      # go to statue
     robot.settings(straight_speed = 900,straight_acceleration= 900, turn_rate=600, turn_acceleration=400)
 
-    await robot.turn(40) 
-    await robot.straight(328)
+    await robot.turn(37) 
+    await robot.straight(338)
     await RAM.run_time(-690,980) # flipper up
 
     # robot.settings(straight_speed = 900,straight_acceleration= 900, turn_rate=600, turn_acceleration=400)
-    await robot.straight(-230)
+    await robot.straight(-240)
     await robot.turn(70)
     await robot.straight(800)
     
