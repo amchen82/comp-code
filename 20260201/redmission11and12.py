@@ -66,7 +66,7 @@ robot = DriveBase(left_motor,right_motor,wheel_diameter,axle_track)
 
 robot.use_gyro(True)
 
-robot.settings(straight_speed = 720,straight_acceleration= 300, turn_rate=600, turn_acceleration=400)
+robot.settings(straight_speed = 900,straight_acceleration= 600, turn_rate=630, turn_acceleration=400)
 hub.imu.reset_heading(0)
 
 if hub.imu.ready():
@@ -74,10 +74,10 @@ if hub.imu.ready():
    # robot.settings(straight_speed = 820,straight_acceleration= 600, turn_rate=600, turn_acceleration=400)
    # robot.straight(200)
     robot.straight(-33)
-    LAM.run_time(-700,1300)
-    robot.straight(5.1)
-    RAM.run_time(-1200,3000)
-    LAM.run_time(1500,1400)
+    RAM.run_time(700,1300)
+    robot.straight(6)
+    LAM.run_time(1200,3000)
+    RAM.run_time(-1500,1400)
     robot.straight(-100)
     robot.straight(100)
     robot.straight(-600)
