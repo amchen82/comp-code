@@ -44,17 +44,19 @@ async def main():
     await RAM.run_time(690,990)   # right arm down 
     print(f"2 arm angle L& R : {LAM.angle()} {RAM.angle()}")  
     await robot.straight(-50)
-    await robot.turn(5.5)
+    # await robot.turn(5.5)
     await robot.straight(-83)
     await LAM.run_time(-690,800) # fork up
 
 
-     # go to statue
+     # go to statue+-
     robot.settings(straight_speed = 900,straight_acceleration= 900, turn_rate=600, turn_acceleration=400)
 
     await robot.turn(35) 
     await robot.straight(355)
-    await RAM.run_time(-400,1200) # flipper up
+    robot.settings(straight_speed = 900,straight_acceleration= 900, turn_rate=900, turn_acceleration=900)
+
+    await RAM.run_time(-900,600) # flipper up
 
     # robot.settings(straight_speed = 900,straight_acceleration= 900, turn_rate=600, turn_acceleration=400)
     await robot.straight(-240)
