@@ -18,6 +18,8 @@ elif selected == "1":
 elif selected == "5":
     import new_silo
 elif selected == "6":
-    import TiPtheScALeTHiNGy2
+    import Simple_Artifact_Dump
 elif selected == "4":
     import TIPtheSCALESthingy
+elif selected == "7":
+    import TiPtheScALeTHiNGy2
